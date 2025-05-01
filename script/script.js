@@ -48,16 +48,16 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('minutaAplicaRapid7').textContent = aplicaRapid7;
         document.getElementById('minutaAplicaPrisma').textContent = aplicaPrisma;
 
-    // Colores para las respuestas de checklist
-    // Rapid7
-    const rapid7Element = document.getElementById('minutaAplicaRapid7');
-    rapid7Element.textContent = aplicaRapid7;
-    rapid7Element.className = 'infoPreguntas ' + (aplicaRapid7 === 'Sí aplica' ? 'respuesta-si' : 'respuesta-no');
-    
-    // Prisma
-    const prismaElement = document.getElementById('minutaAplicaPrisma');
-    prismaElement.textContent = aplicaPrisma;
-    prismaElement.className = 'infoPreguntas ' + (aplicaPrisma === 'Sí aplica' ? 'respuesta-si' : 'respuesta-no');
+        // Colores para las respuestas de checklist
+        // Rapid7
+        const rapid7Element = document.getElementById('minutaAplicaRapid7');
+        rapid7Element.textContent = aplicaRapid7;
+        rapid7Element.className = 'infoPreguntas ' + (aplicaRapid7 === 'Sí aplica' ? 'respuesta-si' : 'respuesta-no');
+        
+        // Prisma
+        const prismaElement = document.getElementById('minutaAplicaPrisma');
+        prismaElement.textContent = aplicaPrisma;
+        prismaElement.className = 'infoPreguntas ' + (aplicaPrisma === 'Sí aplica' ? 'respuesta-si' : 'respuesta-no');
 
 
         document.getElementById('minutaObservaciones').textContent = observaciones;
@@ -76,13 +76,26 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             // Copiar el texto seleccionado
             const successful = document.execCommand('copy');
-            const msg = successful ? 'Minuta copiada al portapapeles!' : 'No se pudo copiar la minuta';
-            alert(msg);
+            const msg = successful ? '¡Minuta copiada al portapapeles!' : 'No se pudo copiar la minuta';
+            
+            // Mostrar mensaje en el elemento HTML
+            mostrarAdvertencia(msg);
         } catch (err) {
-            alert('Error al copiar: ' + err);
+            mostrarAdvertencia('Error al copiar: ' + err);
         }
         
         // Limpiar la selección
         window.getSelection().removeAllRanges();
+    }
+    
+    // Función para mostrar/ocultar advertencias
+    function mostrarAdvertencia(mensaje) {
+        const advertenciaElement = document.getElementById('advertenciaCopy');
+        advertenciaElement.textContent = mensaje;
+        
+        // Ocultar el mensaje después de 3 segundos
+        setTimeout(() => {
+            advertenciaElement.textContent = '';
+        }, 3000);
     }
 });
