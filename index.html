@@ -10,6 +10,11 @@
     <div class="containerPrincipal">
         <div class="container">
             <h1>Generador de Minutas</h1>
+
+            <div class="form-group">
+                <label for="fechaMinuta">Fecha:</label>
+                <input type="date" id="fechaMinuta" required>
+            </div>
             
             <form id="minutaForm">
                 <div class="form-group">
@@ -86,6 +91,7 @@
             <div id="minutaOutput" class="minuta-output">
                 <!-- Aquí está el template de la minuta que queremos formatear con CSS -->
                 <p class="minuta-titulo" id="minutaTitulo">Minuta Semanal - SI [#]</p>
+                <p class="minuta-fecha" id="minutaFecha">Fecha:</p>
                 <ul>
                     <li class="infoProyecto"><strong>Número de proyecto:</strong> <span id="minutaNumeroProyecto"></span></li>
                     <li class="infoProyecto"><strong>Nombre del proyecto:</strong> <span id="minutaNombreProyecto"></span></li>
@@ -107,8 +113,6 @@
                 <br>
                 <span class="infoPreguntas" id="minutaAplicaPrisma"></span></p>
 
-                <!--Firma en caso de ocuparse-->
-                <!--<p class="minuta-firma">Atentamente,<br>El equipo de revisión</p>-->
             </div>
             <button id="copiarBtn">Copiar Minuta</button>
             <p class="advertenciaCopy"></p>
