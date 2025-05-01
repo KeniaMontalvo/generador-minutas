@@ -3,9 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generador de minutas</title>
+    <title>Generador de Minutas</title>
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
-    
+    <div class="containerPrincipal">
+        <div class="container">
+            <h1>Generador de Minutas</h1>
+            
+            <form id="minutaForm">
+                <div class="form-group">
+                    <label for="tituloValor">Valor para el título:</label>
+                    <input type="text" id="tituloValor" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="numeroProyecto">Número del proyecto:</label>
+                    <input type="text" id="numeroProyecto" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="nombreProyecto">Nombre del proyecto:</label>
+                    <input type="text" id="nombreProyecto" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="descripcion">Descripción breve:</label>
+                    <textarea id="descripcion" rows="3" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="arquitecto">Arquitecto:</label>
+                    <input type="text" id="arquitecto" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="solicitante">Solicitante:</label>
+                    <input type="text" id="solicitante" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="observaciones">Observaciones:</label>
+                    <textarea id="observaciones" rows="3"></textarea>
+                </div>
+                
+                <div class="form-group radio-group">
+                    <label>¿Aplica revisión de normativa?</label>
+                    <div>
+                        <input type="radio" id="aplicaSi" name="aplica" value="Sí aplica" checked>
+                        <label for="aplicaSi">Sí aplica</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="aplicaNo" name="aplica" value="No aplica">
+                        <label for="aplicaNo">No aplica</label>
+                    </div>
+                </div>
+                
+                <button type="button" id="generarBtn">Generar Minuta</button>
+            </form>
+        </div>
+
+        <div class="minuta-container">
+            <h2>Minuta Generada</h2>
+            <div id="minutaOutput" class="minuta-output">
+                <!-- Aquí está el template de la minuta que queremos formatear con CSS -->
+                <p class="minuta-titulo" id="minutaTitulo">MINUTA DE COMENTARIOS - PROYECTO [VALOR]</p>
+                <p><strong>Número de proyecto:</strong> <span id="minutaNumeroProyecto"></span></p>
+                <p><strong>Nombre del proyecto:</strong> <span id="minutaNombreProyecto"></span></p>
+                <p><strong>Descripción breve:</strong> <span id="minutaDescripcion"></span></p>
+                <p><strong>Arquitecto:</strong> <span id="minutaArquitecto"></span></p>
+                <p><strong>Solicitante:</strong> <span id="minutaSolicitante"></span></p>
+                <p><strong>Revisión de normativa:</strong> <span id="minutaAplica"></span></p>
+                <p><strong>Observaciones:</strong></p>
+                <div id="minutaObservaciones" class="minuta-observaciones"></div>
+                <p class="minuta-firma">Atentamente,<br>El equipo de revisión</p>
+            </div>
+            <button id="copiarBtn">Copiar Minuta</button>
+        </div>
+
+    </div>
+        
+        <script src="./script/script.js"></script>
 </body>
 </html>
