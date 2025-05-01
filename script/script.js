@@ -15,7 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const arquitecto = document.getElementById('arquitecto').value;
         const solicitante = document.getElementById('solicitante').value;
         const observaciones = document.getElementById('observaciones').value;
-        const aplica = document.querySelector('input[name="aplica"]:checked').value;
+
+        //Valores de los radio buttons
+        const aplicaRapid7 = document.querySelector('input[name="rapid7"]:checked').value;
+        const aplicaPrisma = document.querySelector('input[name="prisma"]:checked').value;
         
         // Actualizar la minuta con los valores del formulario
         document.getElementById('minutaTitulo').textContent = `Minuta Semanal - SI ${tituloValor}`;
@@ -24,7 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('minutaDescripcion').textContent = descripcion;
         document.getElementById('minutaArquitecto').textContent = arquitecto;
         document.getElementById('minutaSolicitante').textContent = solicitante;
-        document.getElementById('minutaAplica').textContent = aplica;
+        document.getElementById('minutaAplicaRapid7').textContent = aplicaRapid7;
+        document.getElementById('minutaAplicaPrisma').textContent = aplicaPrisma;
         document.getElementById('minutaObservaciones').textContent = observaciones;
         
         // Mostrar la minuta generada
