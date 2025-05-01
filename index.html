@@ -13,12 +13,12 @@
             
             <form id="minutaForm">
                 <div class="form-group">
-                    <label for="tituloValor">Valor para el título:</label>
+                    <label for="tituloValor">#SI</label>
                     <input type="text" id="tituloValor" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="numeroProyecto">Número del proyecto:</label>
+                    <label for="numeroProyecto">Solution Identifier (SI)</label>
                     <input type="text" id="numeroProyecto" required>
                 </div>
                 
@@ -33,7 +33,7 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="arquitecto">Arquitecto:</label>
+                    <label for="arquitecto">Nombre del Arquitecto:</label>
                     <input type="text" id="arquitecto" required>
                 </div>
                 
@@ -67,18 +67,26 @@
             <h2>Minuta Generada</h2>
             <div id="minutaOutput" class="minuta-output">
                 <!-- Aquí está el template de la minuta que queremos formatear con CSS -->
-                <p class="minuta-titulo" id="minutaTitulo">MINUTA DE COMENTARIOS - PROYECTO [VALOR]</p>
-                <p><strong>Número de proyecto:</strong> <span id="minutaNumeroProyecto"></span></p>
-                <p><strong>Nombre del proyecto:</strong> <span id="minutaNombreProyecto"></span></p>
-                <p><strong>Descripción breve:</strong> <span id="minutaDescripcion"></span></p>
-                <p><strong>Arquitecto:</strong> <span id="minutaArquitecto"></span></p>
-                <p><strong>Solicitante:</strong> <span id="minutaSolicitante"></span></p>
-                <p><strong>Revisión de normativa:</strong> <span id="minutaAplica"></span></p>
-                <p><strong>Observaciones:</strong></p>
-                <div id="minutaObservaciones" class="minuta-observaciones"></div>
-                <p class="minuta-firma">Atentamente,<br>El equipo de revisión</p>
+                <p class="minuta-titulo" id="minutaTitulo">Minuta Semanal - SI [#]</p>
+                <ul>
+                    <li class="infoProyecto"><strong>Número de proyecto:</strong> <span id="minutaNumeroProyecto"></span></li>
+                    <li class="infoProyecto"><strong>Nombre del proyecto:</strong> <span id="minutaNombreProyecto"></span></li>
+                    <li class="infoProyecto"><strong>Descripción breve:</strong> <span id="minutaDescripcion"></span></li>
+                    <li class="infoProyecto"><strong>Arquitecto:</strong> <span id="minutaArquitecto"></span></li>
+                    <li class="infoProyecto"><strong>Solicitante:</strong> <span id="minutaSolicitante"></span></li>
+                </ul>
+
+                <p class="infoProyecto"><strong>Observaciones:</strong></p>
+                    <div id="minutaObservaciones" class="minuta-observaciones"></div>
+                
+                <!--Preguntas con opción múltiple-->
+                <p class="infoProyecto"><strong>Revisión de normativa:</strong> <span id="minutaAplica"></span></p>
+
+                <!--Firma en caso de ocuparse-->
+                <!--<p class="minuta-firma">Atentamente,<br>El equipo de revisión</p>-->
             </div>
             <button id="copiarBtn">Copiar Minuta</button>
+            <p class="advertenciaCopy"></p>
         </div>
 
     </div>

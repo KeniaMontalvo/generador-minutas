@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const aplica = document.querySelector('input[name="aplica"]:checked').value;
         
         // Actualizar la minuta con los valores del formulario
-        document.getElementById('minutaTitulo').textContent = `MINUTA DE COMENTARIOS - PROYECTO ${tituloValor}`;
+        document.getElementById('minutaTitulo').textContent = `Minuta Semanal - SI ${tituloValor}`;
         document.getElementById('minutaNumeroProyecto').textContent = numeroProyecto;
         document.getElementById('minutaNombreProyecto').textContent = nombreProyecto;
         document.getElementById('minutaDescripcion').textContent = descripcion;
